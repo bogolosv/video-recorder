@@ -1,0 +1,29 @@
+.checkMark * {
+  fill: var(--primary);
+}
+
+.dropdownItem {
+  padding-left: 10px;
+  padding-right: 10px;
+  height: 32px;
+  cursor: pointer;
+  border-radius: 4px;
+
+  &:hover {
+    background-color: var(--grayscale-gs-background-darker);
+  }
+
+  &:active {
+    background-color: var(--grayscale-gs-quarterly-1);
+  }
+
+  &_text {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  &_disabled {
+    color: var(--grayscale-gs-tetriary-2)!important;
+    cursor: not-allowed;
+  }
+}

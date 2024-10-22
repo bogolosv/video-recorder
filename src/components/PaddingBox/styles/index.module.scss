@@ -1,0 +1,27 @@
+@import "../../../styles/const/sizes/index.module";
+
+@each $key, $value in $sizes {
+  .#{$key} {
+    padding: $value;
+  }
+  .#{$key}VR {
+    padding-top: $value;
+    padding-bottom: $value;
+  }
+  .#{$key}HR {
+    padding-left: $value;
+    padding-right: $value;
+  }
+  .#{$key}Top {
+    padding-top: $value;
+  }
+  .#{$key}Right {
+    padding-right: $value;
+  }
+  .#{$key}Bottom {
+    padding-bottom: $value;
+  }
+  .#{$key}Left {
+    padding-left: $value;
+  }
+}

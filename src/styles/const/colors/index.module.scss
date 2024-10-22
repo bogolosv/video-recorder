@@ -1,0 +1,22 @@
+$primary-01: #ccd0cf;
+$primary-02: #9ba8ab;
+$primary-03: #4a5c6a;
+$primary-04: #253745;
+$primary-05: #11212d;
+$primary-06: #06141b;
+
+$black: #111111;
+$white: #FFFFFF;
+$grayscale-gs-background-darker: #F3F4F7;
+$grayscale-gs-quarterly-1: #DFDFE4;
+
+$primary-grayscale: #7e7e7e;
+
+:export {
+  primary01: $primary-01;
+  primary02: $primary-02;
+  primary03: $primary-03;
+  primary04: $primary-04;
+  primary05: $primary-05;
+  primary06: $primary-06;
+}

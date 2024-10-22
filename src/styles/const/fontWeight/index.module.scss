@@ -1,0 +1,25 @@
+$thin: 100;
+$extraLight: 200;
+$light: 300;
+$normal: 400;
+$medium: 500;
+$semiBold: 600;
+$bold: 700;
+$extraBold: 800;
+
+$fontWeights: (
+  thin: $thin,
+  extraLight: $extraLight,
+  light: $light,
+  normal: $normal,
+  medium: $medium,
+  semiBold: $semiBold,
+  bold: $bold,
+  extraBold: $extraBold,
+);
+
+:export {
+  @each $name, $fontWeight in $fontWeights {
+    #{$name}: $fontWeight
+  }
+}

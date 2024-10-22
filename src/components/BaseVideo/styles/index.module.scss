@@ -1,0 +1,18 @@
+@import "../../../styles/const/colors/index.module";
+
+.container {
+  background: black;
+  border-radius: 16px;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: $primary-01;
+
+  video {
+    width: 100%;
+    margin-bottom: -6px;
+    border-radius: 16px;
+  }
+}

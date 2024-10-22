@@ -1,0 +1,18 @@
+@import "../../../styles/const/fontSizes/index.module";
+@import "../../../styles/const/fontWeight/index.module";
+
+@each $key, $value in $fontSizes {
+  .size_#{$key}, .size_#{$key} * {
+    font-size: $value;
+  }
+}
+
+@each $key, $value in $fontWeights {
+  .weight_#{$key}, .weight_#{$key} * {
+    font-weight: $value;
+  }
+}
+
+.lineHeight {
+  line-height: 100%;
+}

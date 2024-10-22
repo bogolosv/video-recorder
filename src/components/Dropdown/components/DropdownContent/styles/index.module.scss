@@ -1,0 +1,23 @@
+.dropdownContent {
+  &_background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+  }
+
+  &_container {
+    position: fixed;
+    max-width: 260px;
+    border-radius: 8px;
+    background-color: var(--grayscale-gs-white);
+    color: var(--grayscale-gs-secondary-1);
+    box-shadow: 0 0 16px 0 rgba(0, 0, 0, 0.10);
+  }
+
+  &_scroll {
+    overflow-y: auto;
+    max-height: 300px;
+  }
+}

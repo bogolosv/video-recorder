@@ -1,0 +1,19 @@
+@import "../../../styles/const/sizes/index.module";
+
+.flexBox {
+  flex-flow: unset;
+}
+
+@each $key, $value in $sizes {
+  .gap_#{$key} {
+    gap: $value;
+  }
+}
+
+.column {
+  flex-direction: column!important;
+}
+
+.flexWrap {
+  flex-wrap: wrap;
+}

@@ -1,0 +1,29 @@
+@import "../../../styles/const/colors/index.module";
+$borderRadius: 16px;
+
+.message {
+  position: absolute;
+  min-width: 250px;
+  transition: .3s;
+  background: $primary-05;
+  color: $primary-01;
+  top: 0;
+  z-index: 1000;
+  border-radius: $borderRadius;
+
+  &ExitActive {
+    top: -300px!important;
+  }
+
+  &Enter {
+    opacity: 0;
+    transform: scale(0.01);
+    border-radius: 1000px;
+  }
+
+  &EnterActive {
+    opacity: 1;
+    border-radius: $borderRadius;
+    transform: scale(1);
+  }
+}

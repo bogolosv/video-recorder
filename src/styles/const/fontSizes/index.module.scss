@@ -1,0 +1,17 @@
+$fsTiny: 12px;
+$fsSmall: 16px;
+$fsMedium: 18px;
+$fsLarge: 32px;
+
+$fontSizes: (
+  tiny: $fsTiny,
+  small: $fsSmall,
+  medium: $fsMedium,
+  large: $fsLarge,
+);
+
+:export {
+  @each $name, $fontSize in $fontSizes {
+    #{$name}: $fontSize
+  }
+}

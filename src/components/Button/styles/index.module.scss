@@ -1,0 +1,99 @@
+@import "../../../styles/const/colors/index.module";
+@import "../../../styles/const/sizes/index.module";
+@import "../../../styles/const/fontSizes/index.module";
+
+.button {
+  border-radius: 1000px;
+  border: unset;
+  cursor: pointer;
+  transition: .3s;
+
+  &:disabled {
+    opacity: .3;
+    cursor: not-allowed;
+  }
+
+  &_default {
+    background: transparent;
+    color: $primary-grayscale;
+
+    &:hover {
+      background: $grayscale-gs-background-darker;
+    }
+
+    &:active {
+      background: $grayscale-gs-quarterly-1;
+    }
+
+    .svg * {
+      fill: $primary-grayscale;
+    }
+  }
+
+  &_primary {
+    background: $primary-03;
+    color: $white;
+
+    &:hover {
+      background: $primary-04;
+    }
+
+    &:active {
+      background: $primary-05;
+    }
+
+    .svg * {
+      fill: $white;
+    }
+  }
+
+  &_link {
+    background: transparent;
+    color: $primary-04;
+
+    &:hover {
+      color: $primary-05;
+    }
+
+    &:active {
+      color: $primary-06;
+    }
+
+    .svg * {
+      fill: $primary-01;
+      transition: .3s;
+
+      &:hover {
+        fill: $primary-02;
+      }
+
+      &:active {
+        fill: $primary-03;
+      }
+    }
+  }
+
+  &_large {
+    padding: calc($medium - $tiny) $medium;
+
+    & * {
+      font-size: $fsSmall;
+    }
+  }
+
+  &_medium {
+    padding: $small;
+
+    & * {
+      font-size: $fsSmall;
+    }
+  }
+
+  &_small {
+    padding: $extraSmall $small;
+
+    & * {
+      font-size: $fsTiny;
+    }
+  }
+}

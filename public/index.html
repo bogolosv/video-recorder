@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Three.js 2D Object with TransformControls</title>
+    <style>
+        body { margin: 0; }
+        canvas { display: block; }
+    </style>
+</head>
+<body>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.128/examples/js/controls/TransformControls.js"></script>
+
+<script>
+    let scene, camera, renderer, transformControl;
+    let plane, selectedObject;
+
+    init();
+    animate();
+
+    function init() {
+        // Створюємо сцену
+        scene = new THREE.Scene();
+
+        // Камера
+        camera = new THREE.OrthographicCamera(window.innerWidth / -2, window.innerWidth / 2, window.innerHeight / 2, window.innerHeight / -2, 1, 1000);
+        camera.position.set(0, 0, 500);
+
+        // Рендерер
+        renderer = new THREE.WebGLRenderer({ antialias: true });
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        document.body.appendChild(renderer.domElement);
+
+        // Площина (об'єкт)
+        const geometry = new THREE.PlaneGeometry(200, 150);
+        const material = new THREE.MeshBasicMaterial({ color: 0x00ff00, side: THREE.DoubleSide });
+        plane = new THREE.Mesh(geometry, material);
+        scene.add(plane);
+
+        // TransformControls для переміщення/масштабування
+        transformControl = new THREE.TransformControls(camera, renderer.domElement);
+        scene.add(transformControl);
+        transformControl.attach(plane); // Приєднуємо площину до контролів
+
+        // Стилізація заокруглених країв (за допомогою текстури або шейдерів)
+        // Приклад: додавання заокруглених країв можна реалізувати через текстуру
+        const textureLoader = new THREE.TextureLoader();
+        const roundedTexture = textureLoader.load('https://via.placeholder.com/200x150/00ff00/ffffff?text=Rounded');
+        material.map = roundedTexture;
+
+        // Додаємо події для роботи з TransformControls
+        window.addEventListener('keydown', function(event) {
+            switch (event.key) {
+                case 'w': // Режим переміщення
+                    transformControl.setMode('translate');
+                    break;
+                case 'e': // Режим масштабування
+                    transformControl.setMode('scale');
+                    break;
+            }
+        });
+    }
+
+    function animate() {
+        requestAnimationFrame(animate);
+        renderer.render(scene, camera);
+    }
+
+</script>
+
+</body>
+</html>

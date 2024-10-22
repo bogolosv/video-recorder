@@ -1,0 +1,29 @@
+$extraTiny: 2px;
+$tiny: 4px;
+$extraSmall: 6px;
+$small: 8px;
+$medium: 16px;
+$normal: 24px;
+$large: 32px;
+$xLarge: 48px;
+$xxLarge: 56px;
+$extraLarge: 64px;
+
+$sizes: (
+  extraTiny: $extraTiny,
+  tiny: $tiny,
+  extraSmall: $extraSmall,
+  small: $small,
+  medium: $medium,
+  normal: $normal,
+  large: $large,
+  xLarge: $xLarge,
+  xxLarge: $xxLarge,
+  extraLarge: $extraLarge
+);
+
+:export {
+  @each $name, $size in $sizes {
+    #{$name}: $size
+  }
+}
