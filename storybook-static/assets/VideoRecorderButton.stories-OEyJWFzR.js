@@ -1,4 +1,0 @@
-import{V as n}from"./VideoRecorderButton-DbZG05gG.js";import{PlayIcon as s}from"./PlayIcon-D7z0okfG.js";import{PauseIcon as c}from"./PauseIcon-BiodG7g_.js";import{CheckMark as m}from"./CheckMark-pSO3gK1y.js";import"./jsx-runtime-DWbWqHZ-.js";import"./index-l2PZgWEW.js";import"./index-B_cAd6g5.js";const e={Play:s,Pause:c,CheckMark:m},g={title:"Components/Video Recorder/VideoRecorderButton",component:n,parameters:{layout:"centered"},tags:["autodocs"],args:{Icon:s},argTypes:{Icon:{control:{type:"select"},options:Object.keys(e),mapping:e}}},o={name:"Default",args:{}};var r,t,a;o.parameters={...o.parameters,docs:{...(r=o.parameters)==null?void 0:r.docs,source:{originalSource:`{
-  name: "Default",
-  args: {}
-}`,...(a=(t=o.parameters)==null?void 0:t.docs)==null?void 0:a.source}}};const V=["DefaultVideoRecorderButtonStory"];export{o as DefaultVideoRecorderButtonStory,V as __namedExportsOrder,g as default};

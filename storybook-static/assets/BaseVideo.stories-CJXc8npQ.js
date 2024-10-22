@@ -1,3 +1,0 @@
-import{B as a}from"./BaseVideo-BCRQAMYp.js";import{v as s}from"./demo-Fxo811Zp.js";import"./jsx-runtime-DWbWqHZ-.js";import"./index-l2PZgWEW.js";import"./index-B_cAd6g5.js";const i={title:"Components/BaseVideo",component:a,parameters:{layout:"centered"},tags:["autodocs"],args:{src:s},argTypes:{src:{control:{type:"text"}}}},e={name:"Default"};var o,t,r;e.parameters={...e.parameters,docs:{...(o=e.parameters)==null?void 0:o.docs,source:{originalSource:`{
-  name: "Default"
-}`,...(r=(t=e.parameters)==null?void 0:t.docs)==null?void 0:r.source}}};const u=["DefaultBaseVideoStory"];export{e as DefaultBaseVideoStory,u as __namedExportsOrder,i as default};
