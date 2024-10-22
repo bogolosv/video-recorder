@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import classes from './styles/index.module.scss';
+// import classes from './styles/index.module.scss';
 import { Dropdown } from "../Dropdown";
 
 type SettingsPropsType = {}

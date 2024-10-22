@@ -1,13 +1,7 @@
-import { useCallback, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 
 export const useMediaStream = () => {
     const [stream, setStream] = useState<MediaStream>();
-
-    const aaaa = useCallback((videoConstraints: MediaTrackConstraints) => {
-        if (!stream) return;
-
-    }, [stream]);
-
     useEffect(() => {
         const videoConstraints: MediaTrackConstraints = {
             deviceId: 'default',

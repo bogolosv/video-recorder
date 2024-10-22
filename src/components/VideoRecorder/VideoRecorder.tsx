@@ -34,7 +34,11 @@ export const VideoRecorder = forwardRef<VideoRecorderRef, VideoRecorderPropsType
     const [qualities, setQualities] = useState<VideoQuality[]>([]);
     const [currentQuality, setCurrentQuality] = useState(VideoQuality.FullHD)
     const baseVideoRef = useRef<BaseVideoRef>(null);
-    const { audioInputs, videoInputs, audioOutputs } = useMediaDevicesContext();
+    const {
+        videoInputs,
+        // audioInputs,
+        // audioOutputs
+    } = useMediaDevicesContext();
     const [videoInput, setVideoInput] = useState<MediaDeviceInfo>();
 
     useImperativeHandle(ref, () => baseVideoRef.current!, [baseVideoRef.current]);
