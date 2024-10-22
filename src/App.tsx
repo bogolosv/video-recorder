@@ -1,6 +1,6 @@
 // import { useMediaStream } from "./hooks/useMediaStream.ts";
 // import { useEffect } from "react";
-import { Settings } from "./components/Settings";
+import { VideoRecorder } from "./components/VideoRecorder";
 
 function App() {
     // const { stream } = useMediaStream();
@@ -8,7 +8,7 @@ function App() {
     //     console.log(stream?.getTracks())
     // }, [stream]);
     return (
-        <Settings/>
+        <VideoRecorder/>
     );
 }
 

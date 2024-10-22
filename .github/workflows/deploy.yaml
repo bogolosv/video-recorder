@@ -1,35 +1,51 @@
 # Workflow name
-name: Build and Publish Storybook to GitHub Pages
+name: Build and Publish Project and Storybook to GitHub Pages
 
 on:
-  # Event for the workflow to run on
   push:
     branches:
-      - 'main' 
-      
+      - 'main'
+
 permissions:
   contents: read
   pages: write
   id-token: write
 
-# List of jobs
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    # Job steps
     steps:
-      # Manual Checkout
+      # Checkout the repository
       - uses: actions/checkout@v4
 
-      # Set up Node
+      # Set up Node.js
       - uses: actions/setup-node@v4
         with:
           node-version: '20.x'
 
-      #👇 Add Storybook build and deploy to GitHub Pages as a step in the workflow
-      - uses: bitovi/github-actions-storybook-to-github-pages@v1.0.3
+      # Install dependencies
+      - run: npm install
+
+      # Build the React project (Vite)
+      - run: npm run build
+        env:
+          CI: true
+
+      # Move the built project to the GitHub Pages root (./gh-pages/)
+      - run: |
+          mkdir -p ./gh-pages
+          mv ./dist/* ./gh-pages/
+
+      # Build Storybook
+      - run: npm run build-storybook
+
+      # Move the Storybook build to the 'storybook' subdirectory in GitHub Pages
+      - run: |
+          mkdir -p ./gh-pages/storybook
+          mv ./storybook-static/* ./gh-pages/storybook/
+
+      # Deploy the combined result to GitHub Pages
+      - name: Deploy to GitHub Pages
+        uses: actions/deploy-pages@v2
         with:
-          install_command: npm install # default: npm ci
-          build_command: npm run build-storybook # default: npm run build-storybook
-          path: storybook-static # default: dist/storybook
-          checkout: false # default: true
+          branch: gh-pages
