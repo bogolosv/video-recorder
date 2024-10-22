@@ -1,75 +1,189 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Three.js 2D Object with TransformControls</title>
+  <head>
+    <meta charset="utf-8" />
+
+    <title>@storybook/core - Storybook</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+
+    
+    <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
+    
     <style>
-        body { margin: 0; }
-        canvas { display: block; }
+      @font-face {
+        font-family: 'Nunito Sans';
+        font-style: normal;
+        font-weight: 400;
+        font-display: swap;
+        src: url('./sb-common-assets/nunito-sans-regular.woff2') format('woff2');
+      }
+
+      @font-face {
+        font-family: 'Nunito Sans';
+        font-style: italic;
+        font-weight: 400;
+        font-display: swap;
+        src: url('./sb-common-assets/nunito-sans-italic.woff2') format('woff2');
+      }
+
+      @font-face {
+        font-family: 'Nunito Sans';
+        font-style: normal;
+        font-weight: 700;
+        font-display: swap;
+        src: url('./sb-common-assets/nunito-sans-bold.woff2') format('woff2');
+      }
+
+      @font-face {
+        font-family: 'Nunito Sans';
+        font-style: italic;
+        font-weight: 700;
+        font-display: swap;
+        src: url('./sb-common-assets/nunito-sans-bold-italic.woff2') format('woff2');
+      }
     </style>
-</head>
-<body>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/three@0.128/examples/js/controls/TransformControls.js"></script>
+    <link href="./sb-manager/runtime.js" rel="modulepreload" />
 
-<script>
-    let scene, camera, renderer, transformControl;
-    let plane, selectedObject;
+    
+    <link href="./sb-addons/storybook-core-core-server-presets-0/common-manager-bundle.js" rel="modulepreload" />
+    
+    <link href="./sb-addons/onboarding-1/manager-bundle.js" rel="modulepreload" />
+    
+    <link href="./sb-addons/links-2/manager-bundle.js" rel="modulepreload" />
+    
+    <link href="./sb-addons/essentials-controls-3/manager-bundle.js" rel="modulepreload" />
+    
+    <link href="./sb-addons/essentials-actions-4/manager-bundle.js" rel="modulepreload" />
+    
+    <link href="./sb-addons/essentials-backgrounds-5/manager-bundle.js" rel="modulepreload" />
+    
+    <link href="./sb-addons/essentials-viewport-6/manager-bundle.js" rel="modulepreload" />
+    
+    <link href="./sb-addons/essentials-toolbars-7/manager-bundle.js" rel="modulepreload" />
+    
+    <link href="./sb-addons/essentials-measure-8/manager-bundle.js" rel="modulepreload" />
+    
+    <link href="./sb-addons/essentials-outline-9/manager-bundle.js" rel="modulepreload" />
+    
+    <link href="./sb-addons/chromatic-com-storybook-10/manager-bundle.js" rel="modulepreload" />
+    
+    <link href="./sb-addons/interactions-11/manager-bundle.js" rel="modulepreload" />
+    
+    <link href="./sb-addons/storybook-12/manager-bundle.js" rel="modulepreload" />
+       
 
-    init();
-    animate();
+    <style>
+      #storybook-root[hidden] {
+        display: none !important;
+      }
+    </style>
 
-    function init() {
-        // Створюємо сцену
-        scene = new THREE.Scene();
+    
+  </head>
+  <body>
+    <div id="root"></div>
 
-        // Камера
-        camera = new THREE.OrthographicCamera(window.innerWidth / -2, window.innerWidth / 2, window.innerHeight / 2, window.innerHeight / -2, 1, 1000);
-        camera.position.set(0, 0, 500);
+    
+    <script>
+      
+        
+          window['FEATURES'] = {
+  "argTypeTargetsV7": true,
+  "legacyDecoratorFileOrder": false,
+  "disallowImplicitActionsInRenderV8": true
+};
+        
+      
+        
+          window['REFS'] = {};
+        
+      
+        
+          window['LOGLEVEL'] = "info";
+        
+      
+        
+          window['DOCS_OPTIONS'] = {
+  "defaultName": "Docs",
+  "autodocs": "tag"
+};
+        
+      
+        
+          window['CONFIG_TYPE'] = "PRODUCTION";
+        
+      
+        
+      
+        
+      
+        
+          window['TAGS_OPTIONS'] = {
+  "dev-only": {
+    "excludeFromDocsStories": true
+  },
+  "docs-only": {
+    "excludeFromSidebar": true
+  },
+  "test-only": {
+    "excludeFromSidebar": true,
+    "excludeFromDocsStories": true
+  }
+};
+        
+      
+        
+          window['STORYBOOK_RENDERER'] = "react";
+        
+      
+        
+          window['STORYBOOK_BUILDER'] = "@storybook/builder-vite";
+        
+      
+        
+          window['STORYBOOK_FRAMEWORK'] = "@storybook/react-vite";
+        
+      
+    </script>
+    
 
-        // Рендерер
-        renderer = new THREE.WebGLRenderer({ antialias: true });
-        renderer.setSize(window.innerWidth, window.innerHeight);
-        document.body.appendChild(renderer.domElement);
+    <script type="module">
+      import './sb-manager/globals-runtime.js';
+      
+      
+        import './sb-addons/storybook-core-core-server-presets-0/common-manager-bundle.js';
+      
+        import './sb-addons/onboarding-1/manager-bundle.js';
+      
+        import './sb-addons/links-2/manager-bundle.js';
+      
+        import './sb-addons/essentials-controls-3/manager-bundle.js';
+      
+        import './sb-addons/essentials-actions-4/manager-bundle.js';
+      
+        import './sb-addons/essentials-backgrounds-5/manager-bundle.js';
+      
+        import './sb-addons/essentials-viewport-6/manager-bundle.js';
+      
+        import './sb-addons/essentials-toolbars-7/manager-bundle.js';
+      
+        import './sb-addons/essentials-measure-8/manager-bundle.js';
+      
+        import './sb-addons/essentials-outline-9/manager-bundle.js';
+      
+        import './sb-addons/chromatic-com-storybook-10/manager-bundle.js';
+      
+        import './sb-addons/interactions-11/manager-bundle.js';
+      
+        import './sb-addons/storybook-12/manager-bundle.js';
+      
+      
+      import './sb-manager/runtime.js';
+    </script>
 
-        // Площина (об'єкт)
-        const geometry = new THREE.PlaneGeometry(200, 150);
-        const material = new THREE.MeshBasicMaterial({ color: 0x00ff00, side: THREE.DoubleSide });
-        plane = new THREE.Mesh(geometry, material);
-        scene.add(plane);
-
-        // TransformControls для переміщення/масштабування
-        transformControl = new THREE.TransformControls(camera, renderer.domElement);
-        scene.add(transformControl);
-        transformControl.attach(plane); // Приєднуємо площину до контролів
-
-        // Стилізація заокруглених країв (за допомогою текстури або шейдерів)
-        // Приклад: додавання заокруглених країв можна реалізувати через текстуру
-        const textureLoader = new THREE.TextureLoader();
-        const roundedTexture = textureLoader.load('https://via.placeholder.com/200x150/00ff00/ffffff?text=Rounded');
-        material.map = roundedTexture;
-
-        // Додаємо події для роботи з TransformControls
-        window.addEventListener('keydown', function(event) {
-            switch (event.key) {
-                case 'w': // Режим переміщення
-                    transformControl.setMode('translate');
-                    break;
-                case 'e': // Режим масштабування
-                    transformControl.setMode('scale');
-                    break;
-            }
-        });
-    }
-
-    function animate() {
-        requestAnimationFrame(animate);
-        renderer.render(scene, camera);
-    }
-
-</script>
-
-</body>
+    
+    <link href="./sb-preview/runtime.js" rel="prefetch" as="script" />
+    
+  </body>
 </html>
