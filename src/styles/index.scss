@@ -24,10 +24,6 @@ body {
   margin: 0;
 }
 
-body > #root {
-  width: 304px;
-}
-
 @media (prefers-color-scheme: light) {
   :root {
     color: $black;

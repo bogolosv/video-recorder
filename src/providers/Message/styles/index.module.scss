@@ -1,6 +1,12 @@
 @import "../../../styles/const/colors/index.module";
 $borderRadius: 16px;
 
+.container {
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
 .message {
   position: absolute;
   min-width: 250px;

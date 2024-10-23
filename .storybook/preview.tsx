@@ -1,5 +1,6 @@
 import type { Preview } from "@storybook/react";
 import { MessageProvider } from "../src/providers/Message/MessageProvider";
+import '../src/styles/index.scss';
 
 const preview: Preview = {
   decorators: (Story) => {

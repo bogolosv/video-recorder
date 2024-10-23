@@ -1,8 +1,8 @@
 // import { useMediaStream } from "./hooks/useMediaStream.ts";
 // import { useEffect } from "react";
-import { VideoRecorder } from "./components/VideoRecorder";
 import { FlexBox } from "./components/FlexBox";
 import { Title } from "./components/Topography/Title";
+import { VideoRecorder } from "./features/VideoRecorder";
 
 function App() {
     // const { stream } = useMediaStream();

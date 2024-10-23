@@ -1,0 +1,1 @@
+export { VideoRecorderButton } from './VideoRecorderButton';

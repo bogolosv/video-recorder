@@ -28,6 +28,7 @@ export const Video = forwardRef<BaseVideoRef, VideoPropsType>(
 ({
     onClick,
     onDownload,
+    children,
     ...props
 }, ref
 ) => {
@@ -154,6 +155,7 @@ export const Video = forwardRef<BaseVideoRef, VideoPropsType>(
                             />
                         </FlexBox>
                     </FlexBox>
+                    {children}
                 </>
             )}
         </BaseVideo>
