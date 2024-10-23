@@ -3,7 +3,7 @@ import { VideoRecorder } from "./VideoRecorder.tsx";
 import { MediaDevicesProvider } from "../../providers/MediaDevices/MediaDevicesProvider.tsx";
 
 const meta = {
-    title: "Components/Video Recorder",
+    title: "Features/Video Recorder",
     component: VideoRecorder,
     decorators: [(Story) => {
         return (

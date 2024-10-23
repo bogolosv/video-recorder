@@ -100,7 +100,7 @@ export const VideoRecorder = forwardRef<VideoRecorderRef, VideoRecorderPropsType
                 </FlexBox>
             ), event);
         }
-    }, []);
+    }, [openMessage]);
 
     return (
         <BaseVideo ref={baseVideoRef} className={classes.recorderContainer} autoPlay style={{

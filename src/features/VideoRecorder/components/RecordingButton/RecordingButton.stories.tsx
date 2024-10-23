@@ -2,7 +2,7 @@ import { Meta, StoryObj } from "@storybook/react";
 import { RecordingButton } from "./RecordingButton.tsx";
 
 const meta = {
-    title: "Components/Video Recorder/RecordingButton",
+    title: "Features/Video Recorder/RecordingButton",
     component: RecordingButton,
     parameters: {
         layout: 'centered',

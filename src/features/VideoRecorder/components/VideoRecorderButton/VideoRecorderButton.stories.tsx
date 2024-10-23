@@ -12,7 +12,7 @@ const icons: Record<string, FC> = {
 };
 
 const meta = {
-    title: "Components/Video Recorder/VideoRecorderButton",
+    title: "Features/Video Recorder/VideoRecorderButton",
     component: VideoRecorderButton,
     parameters: {
         layout: 'centered',

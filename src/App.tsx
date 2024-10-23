@@ -1,19 +1,15 @@
-// import { useMediaStream } from "./hooks/useMediaStream.ts";
-// import { useEffect } from "react";
-import { FlexBox } from "./components/FlexBox";
-import { Title } from "./components/Topography/Title";
-import { VideoRecorder } from "./features/VideoRecorder";
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { Home } from "./pages/Home";
+import { NotFound } from "./pages/NotFound";
 
 function App() {
-    // const { stream } = useMediaStream();
-    // useEffect(() => {
-    //     console.log(stream?.getTracks())
-    // }, [stream]);
     return (
-        <FlexBox column gap='medium'>
-            <Title>Recordify</Title>
-            <VideoRecorder/>
-        </FlexBox>
+        <Router>
+            <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="*" element={<NotFound />} />
+            </Routes>
+        </Router>
     );
 }
 
