@@ -1,5 +1,7 @@
+@import "../../../../../styles/const/colors/index.module";
+
 .checkMark * {
-  fill: var(--primary);
+  fill: $primary-04;
 }
 
 .dropdownItem {
@@ -8,13 +10,14 @@
   height: 32px;
   cursor: pointer;
   border-radius: 4px;
+  transition: .3s;
 
   &:hover {
-    background-color: var(--grayscale-gs-background-darker);
+    background-color: $primary-01;
   }
 
   &:active {
-    background-color: var(--grayscale-gs-quarterly-1);
+    background-color: $primary-02;
   }
 
   &_text {
@@ -23,7 +26,7 @@
     text-overflow: ellipsis;
   }
   &_disabled {
-    color: var(--grayscale-gs-tetriary-2)!important;
+    color: $primary-03!important;
     cursor: not-allowed;
   }
 }

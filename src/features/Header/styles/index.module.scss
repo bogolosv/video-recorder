@@ -1,0 +1,12 @@
+@import "../../../styles/const/colors/index.module";
+.header {
+  max-width: 800px;
+  position: sticky;
+  left: 0;
+  top: 0;
+  background: $primary-03;
+  margin: 16px auto;
+  padding: 16px;
+  border-radius: 16px;
+  box-shadow: 0 0 15px -5px $primary-04;
+}

@@ -1,20 +1,20 @@
 import { Meta, StoryObj } from "@storybook/react";
-import { Settings } from "./Settings.tsx";
+import { Layout } from "./Layout.tsx";
 
 const meta = {
-    title: "Components/Settings",
-    component: Settings,
+    title: "Components/Layout",
+    component: Layout,
     parameters: {
         layout: 'centered',
     },
     tags: ['autodocs'],
-} satisfies Meta<typeof Settings>;
+} satisfies Meta<typeof Layout>;
 
 export default meta;
 
 type Story = StoryObj<typeof meta>;
 
-export const DefaultSettingsStory: Story = {
+export const DefaultLayoutStory: Story = {
     name: "Default",
     args: {},
 };

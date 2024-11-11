@@ -15,29 +15,28 @@ type DemoProps = {
 
 const Demo: FC<DemoProps> = ({ message, isDynamic, isContainer }: DemoProps) => {
     const messageRef = useRef<HTMLDivElement>(null);
-  const { openMessage } = useMessageContext(messageRef.current);
-  const onButtonClick = useCallback(async (event: React.MouseEvent<HTMLButtonElement>) => {
-      await openMessage(message, isDynamic ? event : undefined);
-  }, [openMessage, message, isDynamic]);
+    const { openMessage } = useMessageContext(messageRef.current);
+    const onButtonClick = useCallback(async (event: React.MouseEvent<HTMLButtonElement>) => {
+        await openMessage(message, isDynamic ? event : undefined);
+    }, [openMessage, message, isDynamic]);
 
-
-  return (
-      <FlexBox column gap='large'>
-          <Button primary onClick={onButtonClick}>
-              Open Message
-          </Button>
-          {isContainer && (
-              <FlexBox column gap='small'>
-                  <Span size='medium' weight='semiBold'>It is important to show the message in container, when you in full screen mode.</Span>
-                  <Video src={video}>
-                      <Button primary onClick={onButtonClick} style={{ position: 'absolute' }}>
-                          Open Message
-                      </Button>
-                      <div ref={messageRef}/>
-                  </Video>
-              </FlexBox>
-          )}
-      </FlexBox>
+    return (
+    <FlexBox column gap='large'>
+        <Button primary onClick={onButtonClick}>
+            Open Message
+        </Button>
+        {isContainer && (
+            <FlexBox column gap='small'>
+                <Span size='medium' weight='semiBold'>It is important to show the message in container, when you in full screen mode.</Span>
+                <Video src={video}>
+                    <Button primary onClick={onButtonClick} style={{ position: 'absolute' }}>
+                        Open Message
+                    </Button>
+                    <div ref={messageRef}/>
+                </Video>
+            </FlexBox>
+        )}
+    </FlexBox>
   );
 };
 

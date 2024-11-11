@@ -46,7 +46,7 @@ export const DropdownContent: FC<DropdownContentType> = (
     }, [values.length]);
 
     return (
-        <div>
+        <>
             <div className={classes.dropdownContent_background} onClick={onClose}/>
             <div
                 style={containerStyle}
@@ -74,6 +74,6 @@ export const DropdownContent: FC<DropdownContentType> = (
                     </PaddingBox>
                 )}
             </div>
-        </div>
+        </>
     );
 }

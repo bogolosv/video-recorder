@@ -1,4 +1,4 @@
-import { FC, ReactNode, useMemo, useRef, useState } from 'react';
+import { FC, ReactNode, useEffect, useMemo, useRef, useState } from 'react';
 import classes from './styles/index.module.scss';
 import { FlexBox } from "../FlexBox";
 import { DropdownCollapseIcon } from "../../icons/DropdownCollapseIcon";
@@ -35,7 +35,14 @@ export const Dropdown: FC<DropdownPropType> = (
     const [isShownDropdownContent, setIsShownDropdownContent] = useState(false);
     const [dropdownPosition, setDropdownPosition] = useState<DropdownPositionType>();
     const dropdownRef = useRef<HTMLDivElement>(null);
+
+    const div = useMemo(() => {
+        const root = document.createElement('div');
+        dropdownRef.current?.after(root);
+        return root;
+    }, [dropdownRef.current, isShownDropdownContent]);
     const selectedDropdownValue = useMemo(() => values.find(value => value.id === currentId), [currentId]);
+
     const dropdownClasses = classNames(classes.dropdownContainer, {
         [classes.dropdownContainer_enabled]: !disabled,
         [classes.dropdownContainer_disabled]: disabled,
@@ -59,18 +66,28 @@ export const Dropdown: FC<DropdownPropType> = (
     const handleDropdownClose = () => {
         setIsShownDropdownContent(false);
     };
+    useEffect(() => {
+        return () => {
+            div.remove();
+        }
+    }, [isShownDropdownContent]);
 
     return (
-        <>
-            <div onClick={handleDropdownOpen} className={dropdownClasses} ref={dropdownRef}>
+        <div>
+            <div onClick={handleDropdownOpen} className={dropdownClasses} ref={dropdownRef} title={title}>
                 <PaddingBox smallHR style={{ height: '100%' }}>
                     <FlexBox justify='space-between' align='middle' style={{ height: '100%' }}>
-                        <FlexBox justify='center' align='middle' gap='tiny'>
+                        <FlexBox justify='center' align='middle' gap='tiny' style={{ width: '100%' }}>
                             {icon}
                             {!isCurrentTitleHidden && (
-                                <Span weight='semiBold' size='small' className={classes.dropdownContainer_text}>
-                                    {selectedDropdownValue?.title ?? 'Select'}
-                                </Span>
+                                <FlexBox gap='medium' align='middle' justify='space-between' style={{ width: '100%' }}>
+                                    <Span weight='normal' size='small' className={classes.dropdownContainer_text}>
+                                        {title}:
+                                    </Span>
+                                    <Span weight='semiBold' size='small' className={classes.dropdownContainer_text}>
+                                        {selectedDropdownValue?.title ?? 'Select'}
+                                    </Span>
+                                </FlexBox>
                             )}
                             {title && isCurrentTitleHidden && (
                                 <Span weight='semiBold' size='small' className={classes.dropdownContainer_text}>
@@ -90,8 +107,8 @@ export const Dropdown: FC<DropdownPropType> = (
                     currentId={currentId}
                     setCurrentId={setCurrentId}
                 />,
-                document.body
+                div
             )}
-        </>
+        </div>
     );
 }

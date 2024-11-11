@@ -23,7 +23,8 @@
     "react-router-dom": "^6.27.0",
     "react-transition-group": "^4.4.5",
     "storybook": "^8.3.0",
-    "vite-plugin-sitemap": "^0.7.1"
+    "vite-plugin-sitemap": "^0.7.1",
+    "zustand": "^5.0.1"
   },
   "devDependencies": {
     "@chromatic-com/storybook": "^1.9.0",
