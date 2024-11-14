@@ -15,6 +15,14 @@ export const useMediaDevices = () => {
         setVideoInputs(videoInputs);
         setAudioOutputs(audioOutputs);
     }, []);
+    const getStream = useCallback(async (constraints?: MediaStreamConstraints) => {
+        try {
+            return await navigator.mediaDevices.getUserMedia(constraints);
+        } catch (error) {
+            console.log('Access denied', error);
+            return null;
+        }
+    }, []);
 
     useEffect(() => {
         const handleDeviceChange = async () => {
@@ -34,5 +42,6 @@ export const useMediaDevices = () => {
         videoInputs,
         audioInputs,
         audioOutputs,
+        getStream,
     }
 }

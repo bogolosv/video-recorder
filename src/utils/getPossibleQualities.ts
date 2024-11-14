@@ -7,6 +7,7 @@ export enum VideoQuality {
     FourK = '4K',
     EightK = '8K',
 }
+
 export function getPossibleQualities(maxWidth: number, maxHeight: number): VideoQuality[] {
     const qualities: VideoQuality[] = [];
 

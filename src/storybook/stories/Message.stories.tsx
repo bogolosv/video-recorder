@@ -46,7 +46,6 @@ const meta = {
     parameters: {
         layout: 'centered',
     },
-    tags: ['autodocs'],
     args: {
         message: "New Message!"
     }

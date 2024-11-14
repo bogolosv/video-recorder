@@ -33,7 +33,7 @@ export const VideoRecorder = forwardRef<VideoRecorderRef, VideoRecorderPropsType
     const [isPaused, setIsPaused] = useState(false);
     const [isMuted, setIsMuted] = useState(false);
     const [qualities, setQualities] = useState<VideoQuality[]>([]);
-    const [currentQuality, setCurrentQuality] = useState(VideoQuality.FullHD)
+    const [currentQuality, setCurrentQuality] = useState(VideoQuality.FullHD);
     const baseVideoRef = useRef<BaseVideoRef>(null);
     const {
         videoInputs,
