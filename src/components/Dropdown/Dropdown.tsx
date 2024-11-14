@@ -46,7 +46,7 @@ export const Dropdown: FC<DropdownPropType> = (
     const dropdownClasses = classNames(classes.dropdownContainer, {
         [classes.dropdownContainer_enabled]: !disabled,
         [classes.dropdownContainer_disabled]: disabled,
-        [classes.dropdownContainer_active]: isShownDropdownContent,
+        [classes.dropdownContainer_enabled_active]: isShownDropdownContent,
     });
     const handleDropdownOpen = async () => {
         if (disabled) return;
@@ -81,9 +81,11 @@ export const Dropdown: FC<DropdownPropType> = (
                             {icon}
                             {!isCurrentTitleHidden && (
                                 <FlexBox gap='medium' align='middle' justify='space-between' style={{ width: '100%' }}>
-                                    <Span weight='normal' size='small' className={classes.dropdownContainer_text}>
-                                        {title}:
-                                    </Span>
+                                    {title && (
+                                        <Span weight='normal' size='small' className={classes.dropdownContainer_text}>
+                                            {title}:
+                                        </Span>
+                                    )}
                                     <Span weight='semiBold' size='small' className={classes.dropdownContainer_text}>
                                         {selectedDropdownValue?.title ?? 'Select'}
                                     </Span>
