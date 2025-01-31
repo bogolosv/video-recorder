@@ -79,7 +79,7 @@ export const SceneAddCameraSourceModalContent: FC<SceneAddCameraSourceModalConte
                 {...VIDEO_QUALITY[currentQualityId as VideoQuality]}
                 onStreamAvailable={onCameraStreamAvailable}
             />
-            <FlexBox justify='center'>
+            <FlexBox justify='center' gap='small'>
                 <Button onClick={onClose}>Cancel</Button>
                 <Button primary onClick={handleAddClick}>Add</Button>
             </FlexBox>
